@@ -1,0 +1,824 @@
+/*
+Theme Name: Infini Design
+Author: Xuan Huang
+Author URI: https://www.xuan.com
+Description: This is a theme for organization OJMR
+Tags: music, violons
+Version: 1.0
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 68px;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 25px;
+  text-transform: capitalize;
+  /* font-family: "Fredoka", sans-serif; */
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 25px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: white;
+}
+
+section {
+  padding: 80px 0;
+}
+
+.custom-logo-link img {
+  width: 150px;
+  height: auto;
+}
+
+header {
+  padding-top: 60px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.menu-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  list-style-type: none;
+  margin-top: 50px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-family: "Raleway", sans-serif;
+}
+
+.menu a:hover {
+  color: #b5a57b;
+}
+
+#burger {
+  display: none;
+}
+
+.hero-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.hero p {
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-top: 35px;
+  line-height: 35px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+}
+
+.hero img {
+  max-width: 1000px;
+}
+
+.project-container {
+  display: flex;
+  max-width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.project-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  gap: 100px;
+}
+
+.project-left {
+  flex: 0 0 20%;
+  margin-left: 20px;
+}
+
+.project-grid {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  flex: 0 0 60%;
+  overflow: visible; /* Allow overflow */
+  position: relative;
+  margin-right: -40%;
+}
+
+.project-grid-page {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card-projects {
+  height: 700px;
+}
+
+.card-projects h4 {
+  margin-top: 20px;
+}
+
+.project img {
+  width: 80%;
+}
+
+.btn-gold {
+  text-decoration: none;
+  color: black;
+  background-color: #b5a57b;
+  padding: 10px 15px;
+  border-radius: 50px;
+}
+
+.btn-gold:hover {
+  background-color: #949082;
+}
+
+.btn {
+  border: white 1px solid;
+  font-size: 18px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.btn:hover {
+  border: #b5a57b 1px solid;
+  color: #b5a57b;
+}
+
+.service {
+  width: 100%;
+  overflow: hidden;
+}
+
+.service h2,
+.service h3 {
+  text-align: left;
+}
+
+.service h4 {
+  color: white;
+}
+
+.service-text {
+  width: 50%;
+}
+
+.service-grid {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  margin-top: 5%;
+}
+
+.service-grid .card-services {
+  height: 400px;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 5px rgba(0, 0, 0, 0.1);
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  position: relative;
+}
+
+.service-grid .card-services .overlay {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #b5a57b5d;
+  opacity: 0;
+  transition: 0.5s;
+  border-radius: 0 0 10px 10px;
+}
+
+.service-grid .card-services:hover .overlay {
+  opacity: 1;
+}
+
+.service-header {
+  width: 90%; /* 80% width for the title and button */
+  margin: 0 auto; /* Center the header */
+}
+
+.service-flex {
+  max-width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-service {
+  background-color: black;
+  border-radius: 25px 25px;
+  text-decoration: none;
+  padding: 10px 25px;
+  display: block;
+  color: white;
+  text-transform: capitalize;
+  font-size: 16px;
+}
+
+.btn-service:hover {
+  background-color: transparent;
+  color: black;
+  border: black solid 2px;
+}
+
+.contact h3 {
+  width: 90%;
+}
+
+.contact .btn {
+  height: 40px;
+  width: 100%;
+  display: block;
+  padding: 0px 0px;
+  color: #b5a57b;
+  margin-top: 0;
+  border: solid 1px #b5a57b;
+  background-color: black;
+  transition: 0.2s;
+}
+
+.contact .btn:hover {
+  background-color: #b5a57b;
+  border: solid 1px #b5a57b;
+  color: black;
+}
+
+.contact-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-text {
+  width: 40%;
+}
+
+.contact-form {
+  width: 40%;
+}
+
+.btn-form input {
+  background-color: #b5a57b;
+  padding: 10px 25px;
+  color: black;
+  font-weight: bold;
+}
+
+.btn-form input:hover {
+  background-color: #949082;
+}
+
+#message {
+  width: 100%;
+}
+
+.social-icon {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icon i {
+  font-size: 25px;
+  color: white;
+}
+
+.social-icon i:hover {
+  color: #949082;
+}
+
+.input-holder {
+  border: #949082 1.5px solid;
+  margin-bottom: 10px;
+}
+
+.wpcf7-form-control {
+  background-color: transparent;
+  border: transparent;
+  padding-left: 10px;
+}
+
+textarea {
+  color: white;
+}
+
+input {
+  border: none;
+  outline: none;
+  color: white;
+}
+
+footer {
+  padding: 60px 0;
+}
+
+footer .container {
+  position: relative;
+}
+
+.footer-grid {
+  display: grid;
+  /* gap: 30px; */
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+  gap: 30px;
+}
+
+.mailpoet_submit {
+  color: black;
+  background-color: #b5a57b;
+  width: 150px;
+}
+
+.mailpoet_submit:hover {
+  background-color: #949082;
+}
+
+footer ul {
+  list-style-type: none;
+  line-height: 25px;
+}
+
+footer li {
+  color: white;
+  /* font-size: 20px; */
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+footer a:hover {
+  color: #565e6d;
+}
+
+.col-title {
+  color: #565e6d;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.single-item img {
+  width: 100%;
+  height: 260px;
+  border-radius: 25px 25px;
+}
+
+.single-item img:hover {
+  transform: scale(1.05);
+  opacity: 0.7;
+}
+
+.single-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
+  border-bottom: #565e6d solid 1px;
+  padding-bottom: 60px;
+}
+
+.single-hero {
+  background-color: #b5a57b;
+}
+
+.single-hero h1 {
+  font-size: 60px;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+
+.single-hero p {
+  text-align: center;
+  color: black;
+}
+
+.single-custome {
+  padding-top: 100px;
+}
+
+.single-custome-text {
+  padding: 0 340px;
+  margin-bottom: 60px;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.single-custome p {
+  margin-bottom: 30px;
+}
+
+.single-cta-textinfo {
+  text-align: center;
+}
+
+.wpcf7-response-output {
+  border: none;
+}
+
+.project-img {
+  width: 100%;
+  height: auto;
+}
+
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transform: translateX(-100%);
+  display: none;
+  cursor: pointer;
+  z-index: 999;
+}
+
+#back-to-top a {
+  font-size: 24px;
+  color: #e9e8e3;
+  background-color: #565e6d9c;
+  padding: 10px 15px;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#back-to-top a:hover {
+  background-color: #565e6d;
+}
+
+/* about page */
+.mission-image img {
+  width: 100%;
+}
+
+.misson-flex {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* single-project css */
+.project-single-right h1 {
+  margin-bottom: 40px;
+}
+
+.project-single-right h2 {
+  margin-bottom: 20px;
+  font-size: 25px;
+  margin-top: 40px;
+}
+
+.project-single-right img {
+  margin-bottom: 20px;
+}
+
+.project-single-flex {
+  display: flex;
+  gap: 100px;
+}
+
+.project-preview {
+  width: 40%;
+}
+
+.project-preview ul {
+  line-height: 30px;
+}
+
+.project-single-right {
+  border-left: #b5a57b solid 1px;
+  padding-left: 100px;
+}
+
+@media screen and (max-width: 1000px) {
+  /* .container {
+    max-width: 85%; /* Adjust the height for larger screens 
+  } */
+
+  .single-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .hero-flex {
+    flex-direction: column;
+  }
+
+  .hero-text,
+  .hero-image {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero img {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 995px) {
+  .footer-grid {
+    display: grid;
+    gap: 50px;
+  }
+
+  .footer-col-1 {
+    grid-column: span 1;
+  }
+
+  .footer-col-2 {
+    grid-column: span 1;
+  }
+  .footer-col-3 {
+    grid-column: span 2;
+  }
+  .footer-col-4 {
+    grid-column: span 4;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .about-flex {
+    flex-direction: column;
+  }
+
+  .about-left,
+  .about-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-left {
+    order: 2;
+  }
+
+  .about img {
+    width: 400px;
+    height: 400px;
+  }
+
+  .contact-flex {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact-text,
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-grid {
+    display: grid;
+    gap: 35px;
+  }
+
+  .footer-col-1 {
+    grid-column: span 2;
+  }
+
+  .footer-col-2 {
+    grid-column: span 2;
+  }
+  .footer-col-3 {
+    grid-column: span 2;
+  }
+  .footer-col-4 {
+    grid-column: span 4;
+  }
+}
+
+@media screen and (max-width: 787px) {
+  .service-grid {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr;
+  }
+  .single-custome-text {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 497px) {
+  .single-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 15px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  .hero img {
+    max-width: 300px;
+  }
+
+  .about img {
+    max-width: 250px;
+    height: 250px;
+  }
+
+  #burger {
+    display: block;
+    cursor: pointer;
+  }
+
+  header {
+    position: relative;
+  }
+
+  .menu-list {
+    position: absolute;
+    top: 100%;
+    right: 39px;
+    padding: 20px;
+    width: 80%;
+    display: none;
+    background-color: #565e6dda;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+  }
+
+  .show-menu {
+    display: block; /* Show the menu when the 'show-menu' class is present */
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .menu li a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    margin-bottom: 5px;
+    margin-right: 123px;
+    margin-top: 9px;
+    color: #e9e8e3;
+    transition: color 0.3s ease;
+  }
+
+  .menu li a:hover,
+  .menu li a:focus {
+    color: #949082 !important;
+  }
+
+  #burger i {
+    color: #565e6d;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    font-size: 40px;
+  }
+
+  .project {
+    padding: 60px 0;
+  }
+
+  .project-container {
+    display: block;
+  }
+
+  .project-flex {
+    flex-direction: column;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 15px;
+  }
+
+  .project img {
+    width: 70%;
+  }
+
+  .card-projects {
+    height: 550px;
+  }
+
+  .contact-info {
+    margin-top: 20px;
+  }
+
+  .footer-grid {
+    display: grid;
+    gap: 35px;
+  }
+
+  .footer-col-1 {
+    grid-column: span 4;
+    text-align: center;
+  }
+
+  .footer-col-2 {
+    grid-column: span 4;
+    text-align: center;
+  }
+  .footer-col-3 {
+    grid-column: span 4;
+    text-align: center;
+  }
+  .footer-col-4 {
+    grid-column: span 4;
+    text-align: center;
+  }
+
+  .social-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .mailpoet_form {
+    margin-top: 20px;
+  }
+
+  .single-custome-text {
+    width: 100%;
+  }
+}
