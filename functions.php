@@ -1,37 +1,35 @@
 <?php
-//create a function, name it as you want
-//this function has the purpose of managing the css/ script files connections
-
+// Function to enqueue styles and scripts
 function infini_design_files()
 {
-  // wp_enqueue_style is a WordPress function used to enqueue (load) a CSS file
-  // 'project_school_main_files' is a unique handle for this stylesheet, used to reference it later
-  // get_stylesheet_uri() gets the URL of the current theme's stylesheet
-
+  // Enqueue main stylesheet
   wp_enqueue_style('infini_design_main_files', get_stylesheet_uri());
+
+  // Example: Enqueue additional styles or scripts if necessary
+  // wp_enqueue_style('custom_css', get_template_directory_uri() . '/css/custom.css');
+  // wp_enqueue_script('custom_js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '', true);
 }
-// add_action is a WordPress function used to add a function to a specific action hook
-// 'wp_enqueue_scripts' is a hook fired in the <head> section of the site
-// 'project_school_files' is the name of the function to be executed when the hook is triggered
 add_action('wp_enqueue_scripts', 'infini_design_files');
 
+// Add theme support for custom logo
 add_theme_support('custom-logo');
 
+// Register custom menus
 function my_menus()
 {
   register_nav_menus(
     array(
-      'headernav' => __('Header Nav Menu'),
-      'footernav' => __('Footer Nav Menu')
+      'headernav' => __('Header Nav Menu', 'infini-design'), // Make translation ready
+      'footernav' => __('Footer Nav Menu', 'infini-design')
     )
   );
 }
 add_action('init', 'my_menus');
 
-// add_theme_support('widgets');
-
+// Register custom post types for Services and Projects
 function infini_design_post_types()
 {
+  // Service post type
   register_post_type(
     'service',
     array(
@@ -41,15 +39,16 @@ function infini_design_post_types()
       'has_archive' => true,
       'menu_icon' => 'dashicons-admin-users',
       'labels' => array(
-        'name' => 'Services',
-        'add_new_item' => 'Add New Service',
-        'edit-item' => 'Edit Service',
-        'all_items' => 'All Services',
-        'singular_name' => 'Service'
+        'name' => __('Services', 'infini-design'), // Make translation ready
+        'add_new_item' => __('Add New Service', 'infini-design'),
+        'edit_item' => __('Edit Service', 'infini-design'),
+        'all_items' => __('All Services', 'infini-design'),
+        'singular_name' => __('Service', 'infini-design')
       )
     )
   );
 
+  // Project post type
   register_post_type(
     'project',
     array(
@@ -59,26 +58,25 @@ function infini_design_post_types()
       'has_archive' => true,
       'menu_icon' => 'dashicons-admin-users',
       'labels' => array(
-        'name' => 'Projects',
-        'add_new_item' => 'Add New Project',
-        'edit-item' => 'Edit Project',
-        'all_items' => 'All Projects',
-        'singular_name' => 'Project'
+        'name' => __('Projects', 'infini-design'), // Make translation ready
+        'add_new_item' => __('Add New Project', 'infini-design'),
+        'edit_item' => __('Edit Project', 'infini-design'),
+        'all_items' => __('All Projects', 'infini-design'),
+        'singular_name' => __('Project', 'infini-design')
       )
     )
   );
 }
-
 add_action('init', 'infini_design_post_types');
 
-//footer widgets start
+// Register footer widget areas
 function register_footer_widgets()
 {
   register_sidebar(
     array(
-      'name' => __('Footer Widget Area 1', 'Infini Design'),
+      'name' => __('Footer Widget Area 1', 'infini-design'),
       'id' => 'footer-widget-1',
-      'description' => __('Widgets in this area will be displayed in the first column of the footer.', 'Infini Design'),
+      'description' => __('Widgets in this area will be displayed in the first column of the footer.', 'infini-design'),
       'before_widget' => '<div id="%1$s" class="widget %2$s">',
       'after_widget' => '</div>',
       'before_title' => '<h3 class="widget-title">',
@@ -88,16 +86,14 @@ function register_footer_widgets()
 
   register_sidebar(
     array(
-      'name' => __('Footer Widget Area 2', 'Infini Design'),
+      'name' => __('Footer Widget Area 2', 'infini-design'),
       'id' => 'footer-widget-2',
-      'description' => __('Widgets in this area will be displayed in the second column of the footer.', 'Infini Design'),
+      'description' => __('Widgets in this area will be displayed in the second column of the footer.', 'infini-design'),
       'before_widget' => '<div id="%1$s" class="widget %2$s">',
       'after_widget' => '</div>',
       'before_title' => '<h3 class="widget-title">',
       'after_title' => '</h3>',
     )
   );
-
 }
 add_action('widgets_init', 'register_footer_widgets');
-
