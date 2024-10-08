@@ -97,3 +97,17 @@ function register_footer_widgets()
   );
 }
 add_action('widgets_init', 'register_footer_widgets');
+
+function get_translated_field($base_field_name)
+{
+  // Get the current language using Polylang
+  $current_language = pll_current_language();
+
+  // Check the current language and return the appropriate field
+  if ($current_language == 'fr') { // Assuming 'fr' is the code for French
+    return get_field($base_field_name . '_fr'); // Get the French version
+  }
+
+  // Default to English if not French
+  return get_field($base_field_name . '_en'); // Assuming 'en' is the code for English
+}
